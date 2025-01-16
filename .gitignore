@@ -1,0 +1,22 @@
+# Ignorar configuraciones del entorno Eclipse/STM32CubeIDE
+.metadata/
+
+# Ignorar carpetas de compilación
+TrabajoSEDMicros/Debug/
+TrabajoSEDMicros/Release/
+
+# Ignorar archivos binarios generados
+*.bin
+*.elf
+*.hex
+*.map
+*.o
+
+# Ignorar configuraciones locales
+TrabajoSEDMicros/*.launch
+TrabajoSEDMicros/*.Id
+
+# Ignorar archivos temporales
+.DS_Store
+Thumbs.db
+*~
