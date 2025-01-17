@@ -21,6 +21,8 @@
 #include "ADC.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "stm32f4xx_hal.h"
+#include "parking.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
@@ -78,10 +80,13 @@ while (1)
 	 else
 		 HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11, GPIO_PIN_RESET); // Apaga LED
 	 HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+
+	 Parking_Process(); // Procesar la lógica de estacionamiento
+	    }
   /* USER CODE BEGIN 3 */
 }
 /* USER CODE END 3 */
-}
+
 /**
 * @brief System Clock Configuration
 * @retval None
@@ -102,8 +107,8 @@ void SystemClock_Config(void)
 	 RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
 	 RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
 	 RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-	 RCC_OscInitStruct.PLL.PLLM = 8;
-	 RCC_OscInitStruct.PLL.PLLN = 50;
+	 RCC_OscInitStruct.PLL.PLLM = 16;
+	 RCC_OscInitStruct.PLL.PLLN = 336;
 	 RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
 	 RCC_OscInitStruct.PLL.PLLQ = 7;
 	 if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -184,4 +189,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-
