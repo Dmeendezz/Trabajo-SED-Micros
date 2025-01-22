@@ -19,4 +19,9 @@ void Parking_Init(void);
 void Parking_Process(void);
 void Delay_us(uint32_t us);
 
+//float Get_Stable_Distance(void);
+
+uint8_t get_object_near();
+
 #endif /* PARKING_H */
+
