@@ -1,0 +1,2 @@
+../Core/Src/ADC.c:9:6:MX_ADC1_Init	3
+../Core/Src/ADC.c:48:10:ADC_Read	2
