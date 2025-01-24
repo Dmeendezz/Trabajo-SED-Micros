@@ -8,16 +8,6 @@
 #include "parking2.h"
 #include <stdio.h> // Para printf si es necesario
 
-// Definiciones de pines
-#define TRIG_PIN2 GPIO_PIN_0
-#define TRIG_PORT2 GPIOC
-#define ECHO_PIN2 GPIO_PIN_3
-#define ECHO_PORT2 GPIOC
-
-#define LED_RED_PIN2 GPIO_PIN_1
-#define LED_RED_PORT2 GPIOC
-#define LED_GREEN_PIN2 GPIO_PIN_2
-#define LED_GREEN_PORT2 GPIOC
 
 // Variables estáticas (locales al módulo)
 
@@ -25,7 +15,7 @@
 static TIM_HandleTypeDef htim3; // TEMPORIZADOR TIM 3
 static float distance2;          // Distancia medida en cm
 static uint32_t elapsed_time2 = 0;
-static uint32_t tiempo_plaza2 = 0;
+extern uint32_t tiempo_plaza2 = 0;
 static float tiempo_segundos2 = 0.0f;
 static uint8_t object_near2 = 0;
 

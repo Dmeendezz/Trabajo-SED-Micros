@@ -6,12 +6,11 @@
  */
 #include "parking.h"
 
-/* Variables globales */
-static TIM_HandleTypeDef htim2; // Temporizador para medir pulsos
-static float distance = 0.0f;  // Distancia medida en cm
-static uint32_t elapsed_time = 0; // Tiempo acumulado en microsegundos
-static uint32_t tiempo_plaza1 = 0; // Último tiempo registrado
-static uint8_t object_near = 0;    // Bandera de objeto cercano
+static TIM_HandleTypeDef htim2;
+static float distance = 0.0f;
+static uint32_t elapsed_time = 0;
+static uint32_t tiempo_plaza1 = 0;
+static uint8_t object_near = 0;
 static float tiempo_segundos = 0.0f;
 
 
@@ -28,9 +27,9 @@ static uint32_t Measure_Pulse_Width(void) {
     return (stop >= start) ? (stop - start) : (0xffffffff - start + stop + 1);
 }
 
-/* Inicialización del sistema de estacionamiento */
 
 /* Procesar la lógica de estacionamiento */
+
 void Parking_Process(void) {
     // Generar pulso TRIG
     HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_SET);
